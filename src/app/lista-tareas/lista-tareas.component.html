@@ -1,0 +1,7 @@
+<section class="listaTareas">
+  <h1>MIS TAREAS:</h1>
+  <div class="tarea"  *ngFor="let tarea of arrData">{{tarea}}
+    <input type="button" value="Borrar" (click) = "borraTarea(tarea)" >
+  </div>
+  
+</section>

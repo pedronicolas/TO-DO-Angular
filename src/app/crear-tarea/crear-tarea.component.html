@@ -1,0 +1,12 @@
+<header>
+  <h1>LISTA DE TAREAS</h1>
+</header>
+
+<input type="text" 
+      placeholder="introduce una tarea"
+      [(ngModel)] = "newTareaText"
+      (keyup) = "handleKeyup($event)"      
+      [class.wrongTarea]="newTareaText.trim() === '' && newTareaText !== ''"
+
+>
+
