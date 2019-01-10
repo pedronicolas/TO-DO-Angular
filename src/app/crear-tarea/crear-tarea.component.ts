@@ -14,7 +14,7 @@ export class CrearTareaComponent implements OnInit {
 @Output() nuevaTarea = new EventEmitter;
 newTareaText = '';
   handleKeyup(ev) {
-    console.log('keyup event fired!');
+    console.log('evento lanzado');
     if (ev.keyCode === 13 && this.newTareaText.trim() !== '') {
       console.log('La tarea para añadir es:', this.newTareaText);
       this.nuevaTarea.emit(this.newTareaText.trim());
@@ -27,3 +27,4 @@ newTareaText = '';
   ngOnInit() {}
 
 }
+

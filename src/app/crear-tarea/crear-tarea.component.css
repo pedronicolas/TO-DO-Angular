@@ -1,9 +1,15 @@
 h1 {
-    color: white;
-    background-color:  blue;
+  color: white;
 }
-  
-  .wrongTarea {
-    border: red 3px solid;
-  }
-  
+
+/* .wrongTarea {
+  border: red 3px solid;
+} */
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin:0;
+  border:0;
+}

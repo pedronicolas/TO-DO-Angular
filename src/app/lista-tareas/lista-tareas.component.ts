@@ -1,7 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
-import { pureArrayDef, asProviderData } from '@angular/core/src/view';
-import { BrowserDomAdapter } from '@angular/platform-browser/src/browser/browser_adapter';
-
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'lista-tareas',
@@ -10,6 +7,7 @@ import { BrowserDomAdapter } from '@angular/platform-browser/src/browser/browser
 })
 export class ListaTareasComponent implements OnInit {
   @Input() arrData;
+  @Output() alternarCompletada = new EventEmitter();
 
   borraTarea(tarea: string){ 
     let cont = 0;
@@ -21,6 +19,12 @@ export class ListaTareasComponent implements OnInit {
     }
     this.arrData.splice(cont,1);
   }
+
+
+  emitirCambioCompletada(id){
+    this.alternarCompletada.emit(id);
+  }
+
   constructor() { }
 
   ngOnInit() {

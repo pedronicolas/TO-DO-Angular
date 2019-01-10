@@ -1,7 +1,7 @@
 <header>
   <h1>LISTA DE TAREAS</h1>
-</header>
 
+<div>
 <input type="text" 
       placeholder="introduce una tarea"
       [(ngModel)] = "newTareaText"
@@ -9,4 +9,5 @@
       [class.wrongTarea]="newTareaText.trim() === '' && newTareaText !== ''"
 
 >
-
+</div>
+</header>
