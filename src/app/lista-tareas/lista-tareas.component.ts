@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { pureArrayDef, asProviderData } from '@angular/core/src/view';
 import { BrowserDomAdapter } from '@angular/platform-browser/src/browser/browser_adapter';
 
@@ -10,7 +10,6 @@ import { BrowserDomAdapter } from '@angular/platform-browser/src/browser/browser
 })
 export class ListaTareasComponent implements OnInit {
   @Input() arrData;
-  @Output() borra = new EventEmitter;
 
   borraTarea(tarea: string){ 
     let cont = 0;
