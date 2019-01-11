@@ -3,12 +3,11 @@
     <h1>PRACTICA TODO LISTA ANGULAR </h1>
   </header>
   
-  <!-- 
-    En este div incluiré la tabla para crear tareas:
-  -->
+  <filtrar-tareas (nuevaQuery)="filtrarTareas($event)" (reset)="borrarFiltro()"></filtrar-tareas>
+
   <crear-tarea (nuevaTarea)= "anyadeTarea($event)"></crear-tarea>
   
-  <lista-tareas [arrData]="tareas"  (alternarCompletada)="alternarCompletada($event)"  ></lista-tareas>
+  <lista-tareas [arrData]="tareasFiltradas"  (alternarCompletada)="alternarCompletada($event)" (borrarTarea)= "eliminarTarea($event)" ></lista-tareas>
   
   
 </body>

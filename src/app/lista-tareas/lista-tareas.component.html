@@ -4,7 +4,7 @@
   <h2 class="tarea {{ tarea.completada ? 'completada' : '' }}" *ngFor="let tarea of arrData">{{tarea.text}}
     <input type="checkbox" name="completada" [checked]="tarea.completada" (change)="emitirCambioCompletada(tarea.id)" />
     <input type="text " placeholder="Descripción">
-    <button (click)="eliminar(borraTarea(tarea))">❌</button>
+    <button (click)="eliminar(tarea.id)">❌</button>
   </h2>
 </div>
 </section>

@@ -10,7 +10,10 @@
     text-decoration: line-through;
     background: rgb(8, 133, 8);
   }
-  
+
+
+
+
   .tareas {
     display: flex;
     flex-wrap: wrap;

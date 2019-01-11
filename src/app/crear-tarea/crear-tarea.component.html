@@ -6,8 +6,7 @@
       placeholder="introduce una tarea"
       [(ngModel)] = "newTareaText"
       (keyup) = "handleKeyup($event)"      
-      [class.wrongTarea]="newTareaText.trim() === '' && newTareaText !== ''"
-
+      
 >
 </div>
 </header>

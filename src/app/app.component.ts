@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Task } from './task.interface';
-import { text } from '@angular/core/src/render3';
+
 
 @Component({
   selector: 'app-root',
@@ -8,12 +8,23 @@ import { text } from '@angular/core/src/render3';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  tareas: Array<Task> = [];
-  title = 'angular-exampleList';
+  tareas: Array<Task> = JSON.parse(localStorage.getItem('tareas')) || [];
+  tareasFiltradas: Array<Task> = this.tareas;
+  query: string = '';
+
+  persistirTareas(){
+    localStorage.setItem('tareas',JSON.stringify(this.tareas));
+  }
+  
+  actualizarModelo(){
+    this.persistirTareas();
+    this.filtrarTareas(this.query);
+  }
+
   anyadeTarea(text){
     let newTask:Task = {text, id:Date.now(), completada:false};
     this.tareas.push(newTask);
-    // this.filtrarTareas(this.query);
+    this.actualizarModelo();
   }
 
   alternarCompletada(id){
@@ -23,6 +34,24 @@ export class AppComponent {
       }
       return tarea;    
     })
+  
+  }
+
+  filtrarTareas(query:string){
+    this.query = query;
+    this.tareasFiltradas = this.tareas.filter(tarea => tarea.text.match(this.query));
+  }
+
+  borrarFiltro(){
+    this.tareasFiltradas = this.tareas;
+    this.query = '';
+    this.actualizarModelo();
+  }
+
+  eliminarTarea(id) {
+    this.tareas = this.tareas.filter(tarea => tarea.id !== id);
+    this.filtrarTareas(this.query);
+    this.actualizarModelo();
   }
 
 }

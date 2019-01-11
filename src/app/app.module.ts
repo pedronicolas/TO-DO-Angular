@@ -5,12 +5,14 @@ import { AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CrearTareaComponent } from './crear-tarea/crear-tarea.component';
 import { ListaTareasComponent } from './lista-tareas/lista-tareas.component';
+import { FiltrarTareasComponent } from './filtrar-tareas/filtrar-tareas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CrearTareaComponent,
     ListaTareasComponent,
+    FiltrarTareasComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,23 +8,18 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ListaTareasComponent implements OnInit {
   @Input() arrData;
   @Output() alternarCompletada = new EventEmitter();
-
-  borraTarea(tarea: string){ 
-    let cont = 0;
-    for(let tar of this.arrData){
-      if(tar === tarea){
-      break;
-      }
-      cont= cont + 1;
-    }
-    this.arrData.splice(cont,1);
+  @Output() borrarTarea = new EventEmitter();
+  
+  
+  eliminar(id) {
+    this.borrarTarea.emit(id);
   }
-
 
   emitirCambioCompletada(id){
     this.alternarCompletada.emit(id);
   }
 
+    
   constructor() { }
 
   ngOnInit() {
